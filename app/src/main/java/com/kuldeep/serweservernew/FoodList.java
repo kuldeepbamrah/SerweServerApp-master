@@ -95,9 +95,9 @@ public class FoodList extends AppCompatActivity {
         });
 
         // get data from menu item
-        if (getIntent() != null) {
-            categoryId = getIntent().getStringExtra("CategoryId");
-        }
+
+            categoryId = Common.currentUser.getMenuId();
+
         if (!categoryId.isEmpty()) {
             loadListFood(categoryId);
         }

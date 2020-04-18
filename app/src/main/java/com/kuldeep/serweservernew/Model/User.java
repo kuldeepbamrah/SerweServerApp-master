@@ -3,7 +3,7 @@ package com.kuldeep.serweservernew.Model;
 
 
 public class User {
-    private String Name, Password, Phone, IsStaff;
+    private String Name, Password, Phone, IsStaff,menuId;
 
     public User() {
     }
@@ -11,6 +11,14 @@ public class User {
     public User(String name, String password) {
         Name = name;
         Password = password;
+    }
+
+    public String getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(String menuId) {
+        this.menuId = menuId;
     }
 
     public String getName() {

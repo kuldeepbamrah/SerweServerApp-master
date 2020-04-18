@@ -70,7 +70,7 @@ public class SignIn extends AppCompatActivity {
                     if(Boolean.parseBoolean(user.getIsStaff())) {
                         if(user.getPassword().equals(localPassword)) {
                             // Login ok
-                            Intent homeIntent = new Intent(SignIn.this, Home.class);
+                            Intent homeIntent = new Intent(SignIn.this, FoodList.class);
                             Common.currentUser = user;
                             startActivity(homeIntent);
                             finish();
