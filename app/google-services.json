@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "709097109414",
+    "firebase_url": "https://serwe-ebbec.firebaseio.com",
+    "project_id": "serwe-ebbec",
+    "storage_bucket": "serwe-ebbec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709097109414:android:1d17619e726c3f08",
+        "android_client_info": {
+          "package_name": "com.kuldeep.serwe1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709097109414-uvf1m81vsmi9vk2kb0o1df060ipsnk6m.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "709097109414-vikdp8tpkrjm6kr7ppfi888tq4aeei7d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kuldeep.serwe1",
+            "certificate_hash": "5696df113a95b54a02b28398943df6a1436c9ee1"
+          }
+        },
+        {
+          "client_id": "709097109414-n8is2l2sv7eehphvuqg204ju4u02281v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyGiW0pTCga0NCKEUVHz5nuFv7jqPFB9c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709097109414-uvf1m81vsmi9vk2kb0o1df060ipsnk6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709097109414:android:c9b29d359732068c",
+        "android_client_info": {
+          "package_name": "com.kuldeep.serweservernew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709097109414-6ndcpcl0rdlmr5mukodsqs4n0st8a9gj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kuldeep.serweservernew",
+            "certificate_hash": "5696df113a95b54a02b28398943df6a1436c9ee1"
+          }
+        },
+        {
+          "client_id": "709097109414-uvf1m81vsmi9vk2kb0o1df060ipsnk6m.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "709097109414-n8is2l2sv7eehphvuqg204ju4u02281v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyGiW0pTCga0NCKEUVHz5nuFv7jqPFB9c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709097109414-uvf1m81vsmi9vk2kb0o1df060ipsnk6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

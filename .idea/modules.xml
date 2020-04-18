@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SerweServerApp-master.iml" filepath="$PROJECT_DIR$/SerweServerApp-master.iml" group="SerweServerApp-master" />
+      <module fileurl="file://$PROJECT_DIR$/app/SerweServerApp-master-app.iml" filepath="$PROJECT_DIR$/app/SerweServerApp-master-app.iml" group="SerweServerApp-master/app" />
+      <module fileurl="file://$PROJECT_DIR$/SerweServerNew.iml" filepath="$PROJECT_DIR$/SerweServerNew.iml" group="SerweServerNew" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="SerweServerNew/app" />
+    </modules>
+  </component>
+</project>
