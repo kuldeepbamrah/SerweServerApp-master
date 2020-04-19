@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +53,7 @@ public class FoodList extends AppCompatActivity {
     FloatingActionButton fab;
     @BindView(R.id.rootLayout)
     CoordinatorLayout rootLayout;
+    RatingBar ratingBar;
 
     RecyclerView.LayoutManager layoutManager = null;
 
@@ -92,13 +94,15 @@ public class FoodList extends AppCompatActivity {
         Picasso.with(getBaseContext()).load(objectRestaurant.getImage())
 
                 .into(imgRestaurant);
-
+        ratingBar = findViewById(R.id.ratingBar);
+        ratingBar.setRating(Float.parseFloat(String.valueOf(objectRestaurant.getRating())));
         txtRestaurantName = findViewById(R.id.restaurant_namedetail);
         txtRestaurantAddress = findViewById(R.id.restaurant_address);
         txtRestDesc = findViewById(R.id.restaurant_description);
         txtRestaurantName.setText(objectRestaurant.getName());
         txtRestaurantAddress.setText(objectRestaurant.getAddress());
         txtRestDesc.setText(objectRestaurant.getDescription());
+
 
         // Firebase
         db = FirebaseDatabase.getInstance();
@@ -141,6 +145,7 @@ public class FoodList extends AppCompatActivity {
             @Override
             protected void populateViewHolder(FoodViewHolder viewHolder, Food model, int position) {
                 viewHolder.txtFoodName.setText(model.getName());
+                viewHolder.txtFoodPrice.setText(model.getPrice() + " $");
                 Picasso.with(getBaseContext()).load(model.getImage())
                         .into(viewHolder.imageFood);
                 viewHolder.setItemClickListener(new ItemClickListener() {

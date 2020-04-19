@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -56,11 +57,21 @@ public class OrderStatus extends AppCompatActivity {
             @Override
             protected void populateViewHolder(OrderViewHolder orderViewHolder, Request request, int i) {
 
-                orderViewHolder.txtOrderId.setText(adapter.getRef(i).getKey());
-                orderViewHolder.txtOrderStatus.setText(request.getStatus());
-                orderViewHolder.txtOrAddress.setText(request.getAddress());
-                orderViewHolder.txtOrderPhone.setText(request.getPhone());
+                orderViewHolder.txtOrderId.setText("Order ID: "+adapter.getRef(i).getKey());
+                orderViewHolder.txtOrderStatus.setText("Order Status: "+request.getStatus());
+                orderViewHolder.txtOrAddress.setText("Order Address: "+request.getAddress());
+                if(request.getPhone() == null)
+                {
+                    orderViewHolder.txtOrderPhone.setText("No Phone Number");
+                    orderViewHolder.txtOrderPhone.setTextColor(Color.RED);
 
+
+                }
+                else {
+                    orderViewHolder.txtOrderPhone.setText("Order Phone: "+request.getPhone());
+                }
+                orderViewHolder.txtOrderAmount.setText("Order Amount: "+request.getTotal());
+                orderViewHolder.txtOrderName.setText("Order Name: "+request.getName());
                 orderViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {

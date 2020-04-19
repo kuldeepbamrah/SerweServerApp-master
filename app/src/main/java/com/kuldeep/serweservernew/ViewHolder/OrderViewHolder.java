@@ -11,7 +11,7 @@ import com.kuldeep.serweservernew.R;
 
 public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnCreateContextMenuListener {
 
-    public TextView txtOrderId, txtOrderStatus, txtOrderPhone, txtOrAddress;
+    public TextView txtOrderId, txtOrderStatus, txtOrderPhone, txtOrAddress, txtOrderName, txtOrderAmount;
 
     private ItemClickListener itemClickListener;
 
@@ -22,6 +22,9 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnC
         txtOrderStatus = itemView.findViewById(R.id.order_status);
         txtOrderPhone = itemView.findViewById(R.id.order_phone);
         txtOrAddress = itemView.findViewById(R.id.order_address);
+        txtOrderName = itemView.findViewById(R.id.order_name);
+        txtOrderAmount = itemView.findViewById(R.id.order_total);
+
 
         itemView.setOnClickListener(this);
         itemView.setOnCreateContextMenuListener(this);

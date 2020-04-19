@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
     app:cardElevation="2dp"
-    app:cardCornerRadius="10dp"
-    android:background="@android:color/white">
+    app:cardCornerRadius="20dp"
+    android:outlineSpotShadowColor="@android:color/background_dark"
+    android:background="@android:color/background_dark">
+
+
 
     <LinearLayout
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_margin="5dp"
         android:orientation="horizontal"
+        android:background="@android:color/white"
         android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
+        android:padding="5dp"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_width="70dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="5dp"
@@ -26,6 +31,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:src="@drawable/order"
 
                 >
 
@@ -36,9 +42,11 @@
             android:orientation="vertical"
             android:layout_weight="9"
             android:layout_width="0dp"
+            android:padding="5dp"
             android:layout_height="wrap_content">
 
             <TextView
+                android:layout_marginTop="5dp"
                 android:id="@+id/order_id"
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical|start"
@@ -50,34 +58,70 @@
                 android:layout_height="wrap_content" />
 
             <TextView
+
                 android:id="@+id/order_status"
+                android:layout_marginTop="5dp"
+
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:text="Status"
+                android:textStyle="bold"
+                android:textColor="@android:color/background_dark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
             <TextView
-                android:id="@+id/order_phone"
+                android:id="@+id/order_name"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+
                 android:gravity="center_vertical|start"
                 android:textAllCaps="true"
-                android:text="123456789"
+                android:text="name"
+                android:textColor="@android:color/background_dark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/order_address"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+
                 android:gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:text="Address"
+                android:textColor="@android:color/background_dark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/order_phone"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:textColor="@android:color/background_dark"
+                android:text="123456789"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/order_total"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+
+                android:gravity="center_vertical|start"
+                android:textAllCaps="true"
+                android:text="amount"
+                android:textColor="@android:color/background_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
 
         </LinearLayout>
 
     </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>

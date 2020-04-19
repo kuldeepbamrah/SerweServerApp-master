@@ -18,7 +18,7 @@ import com.kuldeep.serweservernew.R;
 public class FoodViewHolder extends RecyclerView.ViewHolder
         implements View.OnClickListener,
         View.OnCreateContextMenuListener{
-    public TextView txtFoodName;
+    public TextView txtFoodName, txtFoodPrice;
     public ImageView imageFood;
 
     private ItemClickListener itemClickListener;
@@ -28,6 +28,7 @@ public class FoodViewHolder extends RecyclerView.ViewHolder
 
         txtFoodName = itemView.findViewById(R.id.food_name);
         imageFood = itemView.findViewById(R.id.food_image);
+        txtFoodPrice = itemView.findViewById(R.id.food_price);
 
         itemView.setOnClickListener(this);
         itemView.setOnCreateContextMenuListener(this);
