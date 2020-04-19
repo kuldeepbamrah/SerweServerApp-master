@@ -3,6 +3,7 @@ package com.kuldeep.serweservernew.ViewHolder;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.ContextMenu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,7 +19,9 @@ import com.kuldeep.serweservernew.R;
 public class MenuViewHolder extends RecyclerView.ViewHolder
         implements View.OnClickListener,
         View.OnCreateContextMenuListener{
-    public TextView txtMenuName;
+    public TextView txtMenuName, txtMenuAddress;
+    public Button menuTable;
+
     public ImageView imageMenu;
 
     private ItemClickListener itemClickListener;
@@ -27,6 +30,8 @@ public class MenuViewHolder extends RecyclerView.ViewHolder
         super(itemView);
 
         txtMenuName = itemView.findViewById(R.id.menu_name);
+        txtMenuAddress = itemView.findViewById(R.id.menu_address);
+        menuTable = itemView.findViewById(R.id.menu_table);
         imageMenu = itemView.findViewById(R.id.menu_image);
 
         itemView.setOnClickListener(this);

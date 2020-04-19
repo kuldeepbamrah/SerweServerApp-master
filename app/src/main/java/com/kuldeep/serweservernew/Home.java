@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
@@ -22,6 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +41,7 @@ import com.google.firebase.storage.UploadTask;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.squareup.picasso.Picasso;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import butterknife.BindView;
@@ -51,7 +55,7 @@ import com.kuldeep.serweservernew.ViewHolder.MenuViewHolder;
 public class  Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     @BindView(R.id.recycler_menu) RecyclerView recycler_menu;
-    MaterialEditText edtName;
+    EditText edtName, edtDesc, edtPhone, edtEmail, edtTable, edtRating, edtAddress, edtLat, edtLong;
     Button btnUpload;
     Button btnSelect;
 
@@ -138,6 +142,16 @@ public class  Home extends AppCompatActivity
         View add_menu_layout = inflater.inflate(R.layout.add_new_menu_layout, null);
 
         edtName = add_menu_layout.findViewById(R.id.edtName);
+        edtDesc = add_menu_layout.findViewById(R.id.edtDesc);
+        edtEmail = add_menu_layout.findViewById(R.id.edtEmail);
+        edtPhone = add_menu_layout.findViewById(R.id.edtPhone);
+        edtRating = add_menu_layout.findViewById(R.id.edtRating);
+        edtTable = add_menu_layout.findViewById(R.id.edtTable);
+        edtAddress = add_menu_layout.findViewById(R.id.edtAddress);
+        edtLat = add_menu_layout.findViewById(R.id.edtLat);
+        edtLong = add_menu_layout.findViewById(R.id.edtLong);
+
+
         btnUpload = add_menu_layout.findViewById(R.id.btnUpload);
         btnSelect = add_menu_layout.findViewById(R.id.btnSelect);
 
@@ -208,7 +222,8 @@ public class  Home extends AppCompatActivity
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     newCategory = new Category(edtName.getText().toString(),
-                                            uri.toString());
+                                            uri.toString(),edtAddress.getText().toString(),edtDesc.getText().toString(), edtEmail.getText().toString(), edtPhone.getText().toString(),
+                                            Long.parseLong(edtTable.getText().toString()),Double.parseDouble(edtLat.getText().toString()), Double.parseDouble(edtLong.getText().toString()),Double.parseDouble(edtRating.getText().toString()));
                                 }
                             });
                         }
@@ -270,10 +285,46 @@ public class  Home extends AppCompatActivity
                 MenuViewHolder.class,
                 categories) {
             @Override
-            protected void populateViewHolder(MenuViewHolder viewHolder, final Category model, int position) {
+            protected void populateViewHolder(MenuViewHolder viewHolder, final Category model, final int position) {
                 viewHolder.txtMenuName.setText(model.getName());
                 Picasso.with(getBaseContext()).load(model.getImage())
                         .into(viewHolder.imageMenu);
+                viewHolder.txtMenuAddress.setText(model.getAddress());
+                viewHolder.menuTable.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+
+                        // bottom sheet for update tables
+
+                        final BottomSheetDialog mBottomSheetDialog = new BottomSheetDialog(Home.this);
+                        View sheetView = getLayoutInflater().inflate(R.layout.table_bottom_sheet, null);
+                        mBottomSheetDialog.setContentView(sheetView);
+                        //Activity activity = (Activity)getApplicationContext();
+
+                        mBottomSheetDialog.show();
+
+                        TextView textView = sheetView.findViewById(R.id.avail_tables);
+                        textView.setText(String.valueOf(model.getTable()));
+                        final EditText tablenewcount = sheetView.findViewById(R.id.newTableCount);
+                        Button button = sheetView.findViewById(R.id.btnPay);
+                        button.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+
+                                categories.child(adapter.getRef(position).getKey()).child("table").setValue(Long.parseLong(tablenewcount.getText().toString()));
+                                mBottomSheetDialog.cancel();
+                            }
+                        });
+
+                        {
+                        }
+                    }
+
+
+                });
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
@@ -282,6 +333,8 @@ public class  Home extends AppCompatActivity
                         // send categoryId and start new activity
                         Intent foodList = new Intent(Home.this, FoodList.class);
                         foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
+                        foodList.putExtra("restaurantDetail", model);
+
                         startActivity(foodList);
                     }
                 });

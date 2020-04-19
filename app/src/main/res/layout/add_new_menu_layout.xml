@@ -10,21 +10,132 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/edtName"
-            android:hint="Name"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/colorPrimary"
-            android:textColor="@color/colorPrimary"
-            android:textSize="34sp"
-            android:inputType="text"
-            app:met_baseColor="@color/colorPrimary"
-            app:met_floatingLabel="highlight"
-            app:met_primaryColor="@android:color/white"
-            app:met_singleLineEllipsis="true"
-            />
+            android:text="Restaurant Details"
+            android:padding="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:textSize="20dp"></TextView>
+
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="Restaurant Name"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+        <EditText
+            android:id="@+id/edtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="Description"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+        <EditText
+            android:id="@+id/edtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="Phone Number"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="Email Address"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+        <EditText
+            android:id="@+id/edtTable"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="No. of Tables"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+        <EditText
+            android:id="@+id/edtRating"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="Rating (out of 5)"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+
+        <EditText
+            android:id="@+id/edtAddress"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="Address"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+
+        <EditText
+            android:id="@+id/edtLat"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="Latitude"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+
+        <EditText
+            android:id="@+id/edtLong"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:alpha="1.5"
+            android:background="@drawable/edittext"
+            android:hint="Longitude"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff" />
+
+
+
+
 
         <LinearLayout
             android:weightSum="2"
@@ -43,7 +154,7 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-               />
+                />
 
             <Button
                 android:id="@+id/btnUpload"

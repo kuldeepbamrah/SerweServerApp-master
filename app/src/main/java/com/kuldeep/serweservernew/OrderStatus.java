@@ -31,7 +31,7 @@ public class OrderStatus extends AppCompatActivity {
 
     FirebaseDatabase db;
     DatabaseReference requests;
-    MaterialSpinner spinner;
+    Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +57,7 @@ public class OrderStatus extends AppCompatActivity {
             protected void populateViewHolder(OrderViewHolder orderViewHolder, Request request, int i) {
 
                 orderViewHolder.txtOrderId.setText(adapter.getRef(i).getKey());
-                orderViewHolder.txtOrderStatus.setText(Common.convertCodeToStatus(request.getStatus()));
+                orderViewHolder.txtOrderStatus.setText(request.getStatus());
                 orderViewHolder.txtOrAddress.setText(request.getAddress());
                 orderViewHolder.txtOrderPhone.setText(request.getPhone());
 
@@ -96,9 +96,7 @@ public class OrderStatus extends AppCompatActivity {
 
         LayoutInflater inflater = this.getLayoutInflater();
         final View view  = inflater.inflate(R.layout.updae_order_layout,null);
-        spinner =(MaterialSpinner) view.findViewById(R.id.spinner);
-        spinner.setItems("Packed","On My way","Delivered");
-        spinner.setTextColor(getResources().getColor(R.color.colorAccent));
+        spinner =view.findViewById(R.id.spinner);
 
         alertDialog.setView(view);
 
@@ -107,7 +105,7 @@ public class OrderStatus extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-                item.setStatus(String.valueOf(spinner.getSelectedIndex()));
+                item.setStatus(spinner.getSelectedItem().toString());
 
                 requests.child(localKey).setValue(item);
 

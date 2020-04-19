@@ -6,4 +6,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <array name="array_food_update">
+        <item>Placed</item>
+        <item>Packed</item>
+        <item>On the Way</item>
+        <item>Delivered</item>
+
+    </array>
 </resources>

@@ -10,13 +10,16 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -28,6 +31,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.kuldeep.serweservernew.Model.Category;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.squareup.picasso.Picasso;
 
@@ -46,7 +50,8 @@ public class FoodList extends AppCompatActivity {
     RecyclerView recyclerView;
     @BindView(R.id.add_new_food)
     FloatingActionButton fab;
-    @BindView(R.id.rootLayout) RelativeLayout rootLayout;
+    @BindView(R.id.rootLayout)
+    CoordinatorLayout rootLayout;
 
     RecyclerView.LayoutManager layoutManager = null;
 
@@ -63,6 +68,11 @@ public class FoodList extends AppCompatActivity {
     MaterialEditText edtName, edtDescription, edtPrice, edtDiscount;
     Button btnSelect, btnUpload;
 
+    Category objectRestaurant;
+
+    ImageView imgRestaurant;
+    TextView txtRestaurantName, txtRestaurantAddress, txtRestDesc;
+
     // new food
     Food newFood = null;
 
@@ -74,6 +84,21 @@ public class FoodList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list);
         ButterKnife.bind(this);
+
+
+        objectRestaurant = getIntent().getParcelableExtra("restaurantDetail");
+
+        imgRestaurant = findViewById(R.id.img_restaurantdetail);
+        Picasso.with(getBaseContext()).load(objectRestaurant.getImage())
+
+                .into(imgRestaurant);
+
+        txtRestaurantName = findViewById(R.id.restaurant_namedetail);
+        txtRestaurantAddress = findViewById(R.id.restaurant_address);
+        txtRestDesc = findViewById(R.id.restaurant_description);
+        txtRestaurantName.setText(objectRestaurant.getName());
+        txtRestaurantAddress.setText(objectRestaurant.getAddress());
+        txtRestDesc.setText(objectRestaurant.getDescription());
 
         // Firebase
         db = FirebaseDatabase.getInstance();

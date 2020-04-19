@@ -8,12 +8,15 @@
     app:cardElevation="2dp"
     app:cardCornerRadius="10dp">
 
-<com.jaredrummler.materialspinner.MaterialSpinner
+<Spinner
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/spinner">
+    android:layout_height="50dp"
+    android:id="@+id/spinner"
+    android:entries="@array/array_food_update"
 
-</com.jaredrummler.materialspinner.MaterialSpinner>
+    >
+
+</Spinner>
 
 
 </androidx.cardview.widget.CardView>
