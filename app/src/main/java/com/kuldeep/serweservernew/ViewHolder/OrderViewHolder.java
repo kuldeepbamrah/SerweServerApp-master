@@ -42,7 +42,7 @@ public class OrderViewHolder extends RecyclerView.ViewHolder implements View.OnC
         contextMenu.setHeaderTitle("Select the Action");
 
         contextMenu.add(0,0,getAdapterPosition(),"Update");
-        contextMenu.add(0,0,getAdapterPosition(),"Remove");
+        contextMenu.add(0,0,getAdapterPosition(),"Delete");
 
     }
 }

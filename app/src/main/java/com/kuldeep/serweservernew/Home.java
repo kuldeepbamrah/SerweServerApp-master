@@ -48,7 +48,7 @@ import com.kuldeep.serweservernew.Interface.ItemClickListener;
 import com.kuldeep.serweservernew.Model.Category;
 import com.kuldeep.serweservernew.ViewHolder.MenuViewHolder;
 
-public class Home extends AppCompatActivity
+public class  Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     @BindView(R.id.recycler_menu) RecyclerView recycler_menu;
     MaterialEditText edtName;
@@ -331,6 +331,12 @@ public class Home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        if(id == R.id.nav_orders)
+        {
+            Intent orders = new Intent(Home.this,OrderStatus.class);
+            startActivity(orders);
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -351,10 +357,7 @@ public class Home extends AppCompatActivity
         return super.onContextItemSelected(item);
     }
 
-    /**
-     * Delete category item
-     * @param key
-     */
+
     private void deleteCategory(String key) {
         categories.child(key).removeValue();
     }
