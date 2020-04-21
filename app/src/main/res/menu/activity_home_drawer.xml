@@ -12,6 +12,10 @@
             android:id="@+id/nav_orders"
             android:icon="@drawable/ic_access_time_black_24dp"
             android:title="Orders" />
+        <item
+            android:id="@+id/nav_table"
+            android:icon="@drawable/ic_bookmark_border_black_24dp"
+            android:title="Table" />
 
 
         <item
