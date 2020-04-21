@@ -222,7 +222,7 @@ public class  Home extends AppCompatActivity
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     newCategory = new Category(edtName.getText().toString(),
-                                            uri.toString(),edtAddress.getText().toString(),edtDesc.getText().toString(), edtEmail.getText().toString(), edtPhone.getText().toString(),
+                                            uri.toString(),edtAddress.getText().toString(),edtDesc.getText().toString(), edtPhone.getText().toString(), edtEmail.getText().toString(),
                                             Long.parseLong(edtTable.getText().toString()),Double.parseDouble(edtLat.getText().toString()), Double.parseDouble(edtLong.getText().toString()),Double.parseDouble(edtRating.getText().toString()));
                                 }
                             });
