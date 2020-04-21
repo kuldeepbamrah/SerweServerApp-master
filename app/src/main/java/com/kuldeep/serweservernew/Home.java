@@ -389,6 +389,15 @@ public class  Home extends AppCompatActivity
             Intent orders = new Intent(Home.this,OrderStatus.class);
             startActivity(orders);
         }
+        if(id == R.id.nav_logout)
+        {finish();
+        }
+
+        if(id == R.id.nav_table)
+        {
+            Intent tables = new Intent(Home.this,Table.class);
+            startActivity(tables);
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
